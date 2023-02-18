@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://kyjl4fkbg3kg"]
+
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_kvw74"]
+[ext_resource type="Theme" uid="uid://cbrtvoed3gte1" path="res://Themes/ui_theme.tres" id="1_oqvvv"]
+[ext_resource type="FontFile" uid="uid://d14dmlhndb4qu" path="res://Fonts/Montserrat-Bold.ttf" id="2_g7lva"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kvw74")
+
+[node name="GameTitleContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 220
+theme_override_constants/margin_top = 200
+
+[node name="GameTitle" type="Label" parent="GameTitleContainer"]
+layout_mode = 2
+theme = ExtResource("1_oqvvv")
+theme_override_fonts/font = ExtResource("2_g7lva")
+theme_override_font_sizes/font_size = 100
+text = "The Game"
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -620.0
+offset_right = 400.0
+grow_vertical = 0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="MenuListContainer" type="VBoxContainer" parent="MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="ContinueButton" type="Button" parent="MenuContainer/MenuListContainer"]
+layout_mode = 2
+theme = ExtResource("1_oqvvv")
+text = "Continue"
+alignment = 0
+
+[node name="NewGameButton" type="Button" parent="MenuContainer/MenuListContainer"]
+layout_mode = 2
+theme = ExtResource("1_oqvvv")
+text = "New Game"
+
+[node name="SettingsButon" type="Button" parent="MenuContainer/MenuListContainer"]
+layout_mode = 2
+theme = ExtResource("1_oqvvv")
+text = "Settings"
+alignment = 0
+
+[node name="ExitGameButton" type="Button" parent="MenuContainer/MenuListContainer"]
+layout_mode = 2
+theme = ExtResource("1_oqvvv")
+text = "Exit Game"
+alignment = 0
+
+[connection signal="pressed" from="MenuContainer/MenuListContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuListContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuListContainer/SettingsButon" to="." method="_on_settings_buton_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuListContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

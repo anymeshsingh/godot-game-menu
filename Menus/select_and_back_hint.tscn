@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Theme" uid="uid://5m318d3iry8k" path="res://Themes/select_and_back_hint_theme.tres" id="1_rol8r"]
+[ext_resource type="Script" path="res://Menus/select_and_back_hint.gd" id="2_6phdq"]
+[ext_resource type="Shader" path="res://Menus/select_and_back_hint.gdshader" id="3_0gt8f"]
+[ext_resource type="Texture2D" uid="uid://5hycghmemn5y" path="res://Icons/XboxButtons/A.png" id="3_apeqm"]
+[ext_resource type="Texture2D" uid="uid://ccjolenes030u" path="res://Icons/XboxButtons/B.png" id="4_13lgb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hsf8a"]
+shader = ExtResource("3_0gt8f")
+
+[node name="SelectAndBackHint" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rol8r")
+script = ExtResource("2_6phdq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Select" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Select"]
+material = SubResource("ShaderMaterial_hsf8a")
+layout_mode = 2
+texture = ExtResource("3_apeqm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Select"]
+layout_mode = 2
+text = "Select
+"
+
+[node name="Back" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Back"]
+layout_mode = 2
+texture = ExtResource("4_13lgb")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Back"]
+layout_mode = 2
+text = "Back
+"

@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dycbmax1imj58"]
+
+[ext_resource type="FontFile" uid="uid://blqmmhsgxhr8e" path="res://Fonts/Montserrat-Regular.ttf" id="1_6fp7i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sdyy"]
+bg_color = Color(0.890196, 0.4, 0.666667, 1)
+
+[resource]
+default_font = ExtResource("1_6fp7i")
+default_font_size = 40
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_4sdyy")
