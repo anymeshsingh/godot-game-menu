@@ -1,4 +1,4 @@
-extends Control
+extends SimpleGameMenu
 
 class_name SimpleDialog
 
@@ -24,26 +24,26 @@ static func init(question: String, confirm: String = "Yes", cancel: String = "No
 	instance.cancel_text = cancel
 	return instance
 
-func _ready():
-	question_label.text = question_text
-	confirm_button.text = confim_text
-	cancel_button.text = cancel_text
-	update_controller_ui(GameInputManager.input_type)
-	GameInputManager.on_input_type_changed.connect(update_controller_ui)
+#func _ready():
+#	question_label.text = question_text
+#	confirm_button.text = confim_text
+#	cancel_button.text = cancel_text
+#	update_controller_ui(GameInputManager.input_type)
+#	GameInputManager.on_input_type_changed.connect(update_controller_ui)
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_pressed("ui_accept"):
 		on_confirm_pressed.emit()
 	elif Input.is_action_pressed("ui_cancel"):
 		on_cancel_pressed.emit()
 
-func update_controller_ui(input_type: GameInputManager.InputType):
-	if input_type == GameInputManager.InputType.MNK:
-		confirm_button.icon = null
-		cancel_button.icon = null
-	else:
-		confirm_button.icon = preload("res://Icons/XboxButtons/A.png")
-		cancel_button.icon = preload("res://Icons/XboxButtons/B.png")
+#func update_controller_ui(input_type: GameInputManager.InputType):
+#	if input_type == GameInputManager.InputType.MNK:
+#		confirm_button.icon = null
+#		cancel_button.icon = null
+#	else:
+#		confirm_button.icon = preload("res://Icons/XboxButtons/A.png")
+#		cancel_button.icon = preload("res://Icons/XboxButtons/B.png")
 
 func _on_confirm_button_pressed():
 	on_confirm_pressed.emit()

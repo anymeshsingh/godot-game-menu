@@ -1,4 +1,4 @@
-extends Control
+extends SimpleGameMenu
 
 class_name SelectAndBackHint
 
@@ -13,9 +13,9 @@ func _ready():
 	select.visible = showSelect
 	back.visible = showBack
 
-static func init(select: bool = true, back: bool = true) -> SelectAndBackHint:
+static func init(_select: bool = true, _back: bool = true) -> SelectAndBackHint:
 	var scene: PackedScene = preload("res://Menus/select_and_back_hint.tscn")
 	var instance: SelectAndBackHint = scene.instantiate()
-	instance.showSelect = select
-	instance.showBack = back
+	instance.showSelect = _select
+	instance.showBack = _back
 	return instance

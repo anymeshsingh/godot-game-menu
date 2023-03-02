@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var box: CSGBox3D = $Box
+@onready var box = $Box
 
 var tween: Tween
 

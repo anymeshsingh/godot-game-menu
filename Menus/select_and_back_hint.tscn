@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://biky8nto1a3v5"]
 
 [ext_resource type="Theme" uid="uid://5m318d3iry8k" path="res://Themes/select_and_back_hint_theme.tres" id="1_rol8r"]
 [ext_resource type="Script" path="res://Menus/select_and_back_hint.gd" id="2_6phdq"]
-[ext_resource type="Shader" path="res://Menus/select_and_back_hint.gdshader" id="3_0gt8f"]
 [ext_resource type="Texture2D" uid="uid://5hycghmemn5y" path="res://Icons/XboxButtons/A.png" id="3_apeqm"]
 [ext_resource type="Texture2D" uid="uid://ccjolenes030u" path="res://Icons/XboxButtons/B.png" id="4_13lgb"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hsf8a"]
-shader = ExtResource("3_0gt8f")
 
 [node name="SelectAndBackHint" type="Control"]
 layout_mode = 3
@@ -42,7 +38,6 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Select"]
-material = SubResource("ShaderMaterial_hsf8a")
 layout_mode = 2
 texture = ExtResource("3_apeqm")
 expand_mode = 2

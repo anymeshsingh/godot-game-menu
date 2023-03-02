@@ -2,14 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dty3pkach4w70" path="res://Themes/simple_dialog_theme.tres" id="1_m87ef"]
 [ext_resource type="Script" path="res://Menus/simple_dialog.gd" id="2_g1iud"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r68ag"]
-content_margin_left = 50.0
-content_margin_top = 30.0
-content_margin_right = 50.0
-content_margin_bottom = 30.0
-bg_color = Color(1, 1, 1, 1)
-corner_detail = 20
+[ext_resource type="StyleBox" uid="uid://8w1iy1jvwgsx" path="res://Themes/Simple Dialog/dialog_panel_box_style.tres" id="3_iom3u"]
 
 [node name="SimpleDialog" type="Control"]
 layout_mode = 3
@@ -40,7 +33,7 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_r68ag")
+theme_override_styles/panel = ExtResource("3_iom3u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer"]
 layout_mode = 2
@@ -48,8 +41,8 @@ alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="QuestionLabel" type="Label" parent="ColorRect/CenterContainer/PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
