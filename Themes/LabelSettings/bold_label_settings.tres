@@ -1,0 +1,14 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://byiyrxqpb4wj1"]
+
+[ext_resource type="FontFile" uid="uid://dd02winydfx83" path="res://Fonts/Montserrat-VariableFont_wght.ttf" id="1_w8ab0"]
+
+[sub_resource type="FontVariation" id="FontVariation_5ifl5"]
+base_font = ExtResource("1_w8ab0")
+variation_opentype = {
+2003265652: 600
+}
+
+[resource]
+font = SubResource("FontVariation_5ifl5")
+font_size = 40
+font_color = Color(0, 0, 0, 1)

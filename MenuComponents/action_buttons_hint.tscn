@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvpw72tifwac"]
+
+[ext_resource type="Theme" uid="uid://2ti6cnlhlu2u" path="res://Themes/global_theme.tres" id="1_w6wqj"]
+[ext_resource type="Script" path="res://MenuComponents/action_buttons_hint.gd" id="2_min0x"]
+
+[node name="ActionButtonsHint" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_w6wqj")
+script = ExtResource("2_min0x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dytly4saa35d6"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://Scenes/menu_scene.gd" id="1_ysaoo"]
-[ext_resource type="PackedScene" uid="uid://b0r744y8gxp12" path="res://Menus/main_menu.tscn" id="2_kqtya"]
+[ext_resource type="PackedScene" path="res://GameMenus/main_menu.tscn" id="2_kqtya"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b3eml"]
 sky_top_color = Color(0.588235, 0.984314, 0.780392, 1)

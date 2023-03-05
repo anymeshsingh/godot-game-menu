@@ -44,9 +44,9 @@ func _ready():
 
 
 func _input(event):
-	if input_type != InputType.MNK && (event is InputEventMouseButton || event is InputEventMouseMotion || event is InputEventKey):
+	if input_type != InputType.MNK && (event is InputEventMouseButton || event is InputEventKey):
 		_controller_connection_changed(-1, false)
-	elif input_type == InputType.MNK && (event is InputEventJoypadButton || event is InputEventJoypadMotion):
+	elif input_type == InputType.MNK && (event is InputEventJoypadButton):
 		set_default_input_type()
 
 
