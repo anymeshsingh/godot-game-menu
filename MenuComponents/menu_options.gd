@@ -68,8 +68,8 @@ func _ready():
 
 
 # Override vitual function from [SimpleGameMenu]
-func _input_type_change(_input_type: GameInputManager.InputType):
-	if _input_type == GameInputManager.InputType.MNK:
+func _input_type_change(input_type: GameInputManager.InputType):
+	if input_type == GameInputManager.InputType.MNK:
 		_remove_all_focus()
 	else:
 		focus_first()
@@ -116,6 +116,35 @@ func _setup_buttons():
 			btn.pressed.connect(_on_button_pressed.bind(btn.text))
 			
 			container.add_child(btn)
+	
+	# Setup button focus neighbors
+	var btns := container.get_children() as Array[Node]
+	var btns_count := btns.size()
+	if btns_count < 2:
+		return
+	var index = 0
+	for btn in btns:
+		if menu_direction: # horizontal
+			if index == 0: # first button
+				btn.focus_neighbor_left = btns[btns_count - 1].get_path()
+				btn.focus_neighbor_right = btns[1].get_path()
+			elif index == (btns_count - 1): # last button
+				btn.focus_neighbor_left = btns[index - 1].get_path()
+				btn.focus_neighbor_right = btns[0].get_path()
+			else:
+				btn.focus_neighbor_left = btns[index - 1].get_path()
+				btn.focus_neighbor_right = btns[index + 1].get_path()
+		else: # vertical
+			if index == 0: # first button
+				btn.focus_neighbor_top = btns[btns_count - 1].get_path()
+				btn.focus_neighbor_bottom = btns[1].get_path()
+			elif index == (btns_count - 1): # last button
+				btn.focus_neighbor_top = btns[index - 1].get_path()
+				btn.focus_neighbor_bottom = btns[0].get_path()
+			else:
+				btn.focus_neighbor_top = btns[index - 1].get_path()
+				btn.focus_neighbor_bottom = btns[index + 1].get_path()
+		index += 1
 
 
 func _setup_theme():

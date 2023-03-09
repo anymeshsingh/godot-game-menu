@@ -273,6 +273,35 @@ func _setup_buttons():
 				button_container.add_child(btn)
 		
 		v_box_container.add_child(button_container)
+		
+		# Setup button focus neighbors
+		var btns := button_container.get_children() as Array[Node]
+		var btns_count := btns.size()
+		if btns_count < 2:
+			return
+		var index = 0
+		for btn in btns:
+			if buttons_direction: # horizontal
+				if index == 0: # first button
+					btn.focus_neighbor_left = btns[btns_count - 1].get_path()
+					btn.focus_neighbor_right = btns[1].get_path()
+				elif index == (btns_count - 1): # last button
+					btn.focus_neighbor_left = btns[index - 1].get_path()
+					btn.focus_neighbor_right = btns[0].get_path()
+				else:
+					btn.focus_neighbor_left = btns[index - 1].get_path()
+					btn.focus_neighbor_right = btns[index + 1].get_path()
+			else: # vertical
+				if index == 0: # first button
+					btn.focus_neighbor_top = btns[btns_count - 1].get_path()
+					btn.focus_neighbor_bottom = btns[1].get_path()
+				elif index == (btns_count - 1): # last button
+					btn.focus_neighbor_top = btns[index - 1].get_path()
+					btn.focus_neighbor_bottom = btns[0].get_path()
+				else:
+					btn.focus_neighbor_top = btns[index - 1].get_path()
+					btn.focus_neighbor_bottom = btns[index + 1].get_path()
+			index += 1
 
 
 func _setup_theme():

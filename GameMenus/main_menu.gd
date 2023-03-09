@@ -38,7 +38,7 @@ func _on_menu_button_pressed(button_text: String):
 
 func _on_exit_game_button_pressed():
 	main_menu_container.visible = false
-	_exit_dialog = MenuComponents.init_simple_dialog("", "Would you like to exit the game?", [{"text": "Yes", "input_map": "ui_accept"}, {"text": "No", "input_map": "ui_cancel"}])
+	_exit_dialog = MenuComponents.init_simple_dialog("", "Would you like to exit the game?", [{"text": "Yes", "input_map": "ui_accept"}, {"text": "No"}])
 	_exit_dialog.button_focus_sound = preload("res://Audio/select_006.ogg")
 	_exit_dialog.button_press_sound = preload("res://Audio/confirmation_003.ogg")
 	_exit_dialog.on_dialog_button_pressed.connect(_on_exit_dialog_button_pressed)
@@ -55,15 +55,3 @@ func _on_exit_dialog_button_pressed(button_text: String):
 				menu_options.focus_first()
 			if _exit_dialog:
 				_exit_dialog.queue_free()
-
-
-func _on_exit_dialog_confirm_pressed():
-	get_tree().quit()
-
-
-func _on_exit_dialog_cancel_pressed():
-	main_menu_container.visible = true
-	if !GameInputManager.is_input_type_keyboard():
-		menu_options.focus_first()
-	if _exit_dialog:
-		_exit_dialog.queue_free()

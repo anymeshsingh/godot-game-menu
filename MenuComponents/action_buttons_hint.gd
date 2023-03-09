@@ -2,6 +2,7 @@
 class_name ActionButtonsHint
 extends MenuComponents
 
+
 @export_category("Action Buttons Hint")
 @export_subgroup("Hints")
 @export var content_direction: ContentDirection = ContentDirection.HORIZONTAL:
