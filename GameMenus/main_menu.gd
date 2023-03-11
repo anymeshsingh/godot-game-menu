@@ -27,9 +27,9 @@ func _set_game_title():
 func _on_menu_button_pressed(button_text: String):
 	match button_text:
 		"Continue":
-			pass
+			get_tree().change_scene_to_packed(preload("res://Demo/demo_level.tscn"))
 		"New Game":
-			pass
+			get_tree().change_scene_to_packed(preload("res://Demo/demo_level.tscn"))
 		"Settings":
 			pass
 		"Exit Game":

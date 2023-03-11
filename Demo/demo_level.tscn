@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhortqq7p822p"]
+
+[ext_resource type="Script" path="res://Demo/demo_level.gd" id="1_e1lca"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oyia0"]
+sky_top_color = Color(0.588235, 0.984314, 0.780392, 1)
+sky_horizon_color = Color(0.760784, 0.830392, 0.847059, 1)
+ground_bottom_color = Color(0.454902, 0.337255, 0.607843, 1)
+ground_horizon_color = Color(0.760784, 0.830392, 0.847059, 1)
+
+[sub_resource type="Sky" id="Sky_1f0pw"]
+sky_material = SubResource("ProceduralSkyMaterial_oyia0")
+
+[sub_resource type="Environment" id="Environment_o5txq"]
+background_mode = 1
+background_color = Color(0.454902, 0.337255, 0.607843, 1)
+sky = SubResource("Sky_1f0pw")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_normalized = true
+glow_intensity = 1.26
+glow_strength = 1.27
+glow_hdr_scale = 2.36
+glow_map_strength = 0.52
+fog_sky_affect = 0.399
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.968627, 1, 0.682353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hd62"]
+albedo_color = Color(0.588235, 0.984314, 0.780392, 1)
+
+[node name="DemoLevel" type="Node3D"]
+script = ExtResource("1_e1lca")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o5txq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.633381, 0.215895, -0.743114, 0, 0.960294, 0.278991, 0.77384, 0.176708, -0.608232, 0, 0, 0)
+light_color = Color(0.968627, 1, 0.682353, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_max_distance = 105.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, 4.863)
+
+[node name="Box" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, -0.707107, 0, 0.576382, 0.576382, -0.579281, 0.409614, 0.409614, 0.815128, 0, 0, 0)
+material = SubResource("StandardMaterial3D_3hd62")

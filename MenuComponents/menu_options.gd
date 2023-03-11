@@ -155,6 +155,7 @@ func _setup_theme():
 	margin_container.add_theme_constant_override("margin_bottom", margin_bottom)
 	margin_container.add_theme_constant_override("margin_left", margin_left)
 	margin_container.add_theme_constant_override("margin_right", margin_right)
+	
 	set_anchor_for(self, anchor_preset)
 	set_anchor_for(margin_container, anchor_preset)
 

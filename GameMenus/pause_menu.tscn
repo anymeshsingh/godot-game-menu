@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsi5hscpm77ai"]
+
+[ext_resource type="Script" path="res://GameMenus/pause_menu.gd" id="1_j6scr"]
+[ext_resource type="LabelSettings" uid="uid://bjvc6s411fyjf" path="res://Themes/LabelSettings/heading_label_settings.tres" id="1_w636g"]
+[ext_resource type="PackedScene" uid="uid://dg2h2ab7drj68" path="res://MenuComponents/menu_options.tscn" id="2_qjipd"]
+[ext_resource type="AudioStream" uid="uid://3e0fdgylyqh1" path="res://Audio/select_006.ogg" id="3_r0iws"]
+[ext_resource type="AudioStream" uid="uid://cotrmkt7iiyf2" path="res://Audio/confirmation_003.ogg" id="4_ld206"]
+[ext_resource type="PackedScene" uid="uid://dbvpw72tifwac" path="res://MenuComponents/action_buttons_hint.tscn" id="5_s8hmf"]
+[ext_resource type="Texture2D" uid="uid://5hycghmemn5y" path="res://Icons/XboxButtons/A.png" id="7_k3b5v"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j6scr")
+
+[node name="PauseMenuContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenuContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.666667, 0.517647, 1)
+
+[node name="GameTitleContainer" type="MarginContainer" parent="PauseMenuContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.5
+offset_right = 176.5
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="PauseMenuTitleLabel" type="Label" parent="PauseMenuContainer/GameTitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pause Menu"
+label_settings = ExtResource("1_w636g")
+horizontal_alignment = 1
+
+[node name="MenuOptions" parent="PauseMenuContainer" instance=ExtResource("2_qjipd")]
+layout_mode = 2
+anchors_preset = 0
+buttons = Array[Dictionary]([{
+"text": "Resume Game"
+}, {
+"text": "Settings"
+}, {
+"text": "Exit to Title Screen"
+}, {
+"text": "Exit Game"
+}])
+focus_sound = ExtResource("3_r0iws")
+press_sound = ExtResource("4_ld206")
+
+[node name="ActionButtonsHint" parent="PauseMenuContainer" instance=ExtResource("5_s8hmf")]
+layout_mode = 1
+button_hints = Array[Dictionary]([{
+"icon": ExtResource("7_k3b5v"),
+"text": "Select"
+}])

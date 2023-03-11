@@ -63,10 +63,12 @@ func _ready():
 	super._ready()
 	_setup_hints()
 	_setup_theme()
+	
+	_input_type_change(GameInputManager.input_type)
 
 
 func _input_type_change(_input_type: GameInputManager.InputType) -> void:
-	if GameInputManager.is_input_type_keyboard():
+	if _input_type == GameInputManager.InputType.MNK:
 		visible = false
 	else:
 		visible = true
