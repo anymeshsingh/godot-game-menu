@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlcuplxkiy80"]
+
+[ext_resource type="Theme" uid="uid://2ti6cnlhlu2u" path="res://Themes/global_theme.tres" id="1_xmdal"]
+[ext_resource type="Script" path="res://MenuComponents/game_menu_tab_bar.gd" id="2_deily"]
+[ext_resource type="Texture2D" uid="uid://c15totmx0iip" path="res://Icons/XboxButtons/Left Bumper.png" id="2_fospq"]
+[ext_resource type="Texture2D" uid="uid://cpx52i57inqi6" path="res://Icons/XboxButtons/Right Bumper.png" id="3_uglo7"]
+
+[node name="GameMenuTabBar" type="HBoxContainer"]
+offset_right = 841.0
+offset_bottom = 90.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("1_xmdal")
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("2_deily")
+input_buttons_texture_sepeartion = 20
+tab_0/title = null
+tab_0/icon = null
+
+[node name="LeftButtonTexture" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_fospq")
+expand_mode = 3
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+tab_alignment = 1
+clip_tabs = false
+scrolling_enabled = false
+tab_count = 1
+tab_0/title = ""
+
+[node name="RightButtonTexture" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_uglo7")
+expand_mode = 3

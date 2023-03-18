@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfltnj5akc3h1"]
+[gd_scene load_steps=6 format=3 uid="uid://cfltnj5akc3h1"]
 
 [ext_resource type="Theme" uid="uid://2ti6cnlhlu2u" path="res://Themes/global_theme.tres" id="1_63xqc"]
 [ext_resource type="Script" path="res://GameMenus/main_menu.gd" id="1_kvw74"]
 [ext_resource type="LabelSettings" uid="uid://b2vfr0qmkjsmy" path="res://Themes/LabelSettings/title_label_settings.tres" id="3_o3nr2"]
 [ext_resource type="PackedScene" uid="uid://dg2h2ab7drj68" path="res://MenuComponents/menu_options.tscn" id="5_arb0k"]
-[ext_resource type="AudioStream" uid="uid://3e0fdgylyqh1" path="res://Audio/select_006.ogg" id="5_cl4rm"]
-[ext_resource type="AudioStream" uid="uid://cotrmkt7iiyf2" path="res://Audio/confirmation_003.ogg" id="6_8kofg"]
 [ext_resource type="PackedScene" uid="uid://dbvpw72tifwac" path="res://MenuComponents/action_buttons_hint.tscn" id="7_hndwr"]
-[ext_resource type="Texture2D" uid="uid://5hycghmemn5y" path="res://Icons/XboxButtons/A.png" id="8_6ytvt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -49,12 +46,6 @@ label_settings = ExtResource("3_o3nr2")
 [node name="MenuOptions" parent="MainMenuContainer" instance=ExtResource("5_arb0k")]
 layout_mode = 1
 anchors_preset = 7
-focus_sound = ExtResource("5_cl4rm")
-press_sound = ExtResource("6_8kofg")
 
 [node name="ActionButtonsHint" parent="MainMenuContainer" instance=ExtResource("7_hndwr")]
 layout_mode = 1
-button_hints = Array[Dictionary]([{
-"icon": ExtResource("8_6ytvt"),
-"text": "Select"
-}])
